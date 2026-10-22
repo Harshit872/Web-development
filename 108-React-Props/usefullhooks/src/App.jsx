@@ -3,19 +3,21 @@ import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
+import Navbar from "./componenets/navbar";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [first, setFirst] = useState(0);
+  const [color, setColor] = useState(0);
 
   useEffect(() => {
-    alert("hey welcome to my page");
-  }, []);
-  useEffect(() => {
     alert("Count was changed");
+    setColor(color + 1);
   }, [count]);
 
   return (
     <>
+      <Navbar color={"navy " + "blue " + color} />
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
